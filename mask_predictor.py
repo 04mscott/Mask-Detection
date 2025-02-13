@@ -1,4 +1,5 @@
 import tensorflow as tf
+import numpy as np
 
 def predict_with_model(model, img_path):
     img = tf.io.read_file(img_path)
@@ -10,8 +11,8 @@ def predict_with_model(model, img_path):
     classes = ['Mask Worn Incorrectly', 'Mask Worn Correctly', 'No Mask']
 
     probs = model.predict(img) # Returns list of probabilities of img belonging to each class
-    top_prob = probs.max()
-    pred = classes[pred] # Index of max value
+    top_prob = round(probs.max(), 2)
+    pred = classes[np.argmax(probs)] # Index of max value
 
     return top_prob, pred
 
