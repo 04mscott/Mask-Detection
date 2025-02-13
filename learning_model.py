@@ -1,6 +1,4 @@
 import tensorflow
-import matplotlib.pyplot as plt
-import numpy as np
 from tensorflow.keras.layers import Conv2D, Input, Dense, MaxPool2D, BatchNormalization, GlobalAvgPool2D, Flatten
 
 def mask_classifier(num_classes):
