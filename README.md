@@ -1,8 +1,7 @@
 [Return to Home](https://04mscott.github.io/)
 
-# Image Classification Neural Network 
-
-## Mask Detection Using TensorFlow
+<center><h1>Image Classification Neural Network</h1></center>
+Mask Detection Using TensorFlow
 
 ![default application](https://github.com/04mscott/Mask-Detection/blob/main/assets/imgs/default.png)
 ---
