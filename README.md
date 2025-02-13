@@ -12,8 +12,6 @@ Link to web application will be found here once it has been deployed
 ## Overview
 This project leverages machine learning to develop an image classification system capable of detecting whether individuals are wearing masks. Using a Convolutional Neural Network (CNN) built with TensorFlow, the project achieved high performance and user accessibility through a custom-designed graphical interface.
 
----
-
 ## Key Features
 + High-Performance Model:
   - Constructed a CNN using TensorFlow's functional API to classify mask-wearing in images.
