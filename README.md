@@ -3,7 +3,7 @@
 <center><h1>Image Classification Neural Network</h1></center>
 <center><h2>Mask Detection Using TensorFlow</h2></center>
 
-<img src="assets/imgs/incorrect_mask.png" class="img-responsive" alt=""> </div>
+<img src="assets/imgs/incorrect_mask.png" class="img-responsive" alt="">
 
 Link to web application will be found here once it has been deployed
 
