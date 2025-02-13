@@ -25,11 +25,13 @@ This project leverages machine learning to develop an image classification syste
   - Designed and implemented a Graphical User Interface (GUI) using TaiPy, enabling users to:
     - Upload an image directly through the interface.
     - Receive real-time predictions on whether the individual in the image is wearing a mask.
+
 ## Technologies Used
 + Machine Learning Framework: TensorFlow (Functional API)
 + Programming Language: Python
 + GUI Development: TaiPy
 + Data Handling: File I/O for dataset management
+  
 ## How It Works
 + Upload an Image: Users upload an image of a person through the TaiPy-powered GUI.
 + Prediction in Real-Time: The model processes the image and outputs whether the person is wearing a mask or not, along with confidence scores.
