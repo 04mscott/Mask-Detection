@@ -3,9 +3,9 @@ from mask_predictor import predict_with_model
 from tensorflow.keras import models
 from PIL import Image
 
-model = models.load_model('/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Models/mask_classifier.keras')
+model = models.load_model('/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Models/mask_classifier.keras')
 
-img_path = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/assets/imgs/placeholder_image.png'
+img_path = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/assets/imgs/placeholder_image.png'
 content = ''
 prob = 0
 pred = ''

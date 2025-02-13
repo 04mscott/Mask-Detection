@@ -8,9 +8,9 @@ from learning_model import mask_classifier
 
 if __name__=='__main__':
 
-    path_to_train = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/train'
-    path_to_val = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/val'
-    path_to_test = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/test'
+    path_to_train = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/train'
+    path_to_val = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/val'
+    path_to_test = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/test'
     batch_size = 16
     epochs = 20
     lr = 0.0001 # default learning rate
@@ -24,17 +24,17 @@ if __name__=='__main__':
     
 
     if SPLIT_DATA:
-            path_to_data = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset'
-            path_to_save_train = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/train'
-            path_to_save_val = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/val'
-            path_to_save_test = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/test'
+            path_to_data = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset'
+            path_to_save_train = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/train'
+            path_to_save_val = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/val'
+            path_to_save_test = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/test'
             split_data(path_to_data, path_to_save_train, path_to_save_val, path_to_save_test)
 
 
     if TRAIN:
 
         # Saves the best model from the validation accuracy during training
-        checkpoint_path = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Models/mask_classifier.keras'
+        checkpoint_path = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Models/mask_classifier.keras'
         checkpoint_dir = os.path.dirname(checkpoint_path)
         checkpoint_saver = ModelCheckpoint(
             checkpoint_path,
@@ -63,7 +63,7 @@ if __name__=='__main__':
 
 
     if TEST:
-        model = tf.keras.models.load_model('/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Models/mask_classifier.keras')
+        model = tf.keras.models.load_model('/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Models/mask_classifier.keras')
         model.summary()
 
         print('Evaluating Validation Set:')

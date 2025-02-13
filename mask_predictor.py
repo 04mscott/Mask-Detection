@@ -17,8 +17,8 @@ def predict_with_model(model, img_path):
     return top_prob, pred
 
 if __name__=='__main__':
-    img_path = '/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Dataset/test/without_mask/90.png'
-    model = tf.keras.models.load_model('/Users/masonscott/git-repos/Python-Projects/Mask-Detection/Models/mask_classifier.keras')
+    img_path = '/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Dataset/test/without_mask/90.png'
+    model = tf.keras.models.load_model('/Users/masonscott/git-repos/Python-Projects/Face-Mask-Image-Classification/Models/mask_classifier.keras')
     top_prob, pred = predict_with_model(model, img_path)
 
     print(f'prediction = {pred}')
