@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: taipy-web-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 3 wsgi:app
