@@ -18,7 +18,7 @@ def get_model():
 print('Loading Keras Model...')
 get_model()
 
-@app.route("/predict", methods = ['POST'])
+@app.route("/", methods = ['POST'])
 def predict():
     message = request.get_json(force=True)
     encoded = message['image']
@@ -39,4 +39,4 @@ def predict():
     return jsonify(response)
 
 if __name__=='__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(debug=True)

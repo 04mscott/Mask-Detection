@@ -2,3 +2,4 @@ Flask
 numpy
 scikit_learn
 tensorflow
+gunicorn
