@@ -1,5 +1,9 @@
 numpy==2.2.3
-Pillow==11.1.0
-scikit_learn==1.4.2
+scikit_learn==1.6.1
 taipy==4.0.2
+taipy_common==4.0.2
+taipy_core==4.0.2
+taipy_gui==4.0.2
+taipy_rest==4.0.2
+taipy_templates==4.0.2
 tensorflow==2.18.0
