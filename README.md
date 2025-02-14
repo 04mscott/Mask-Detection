@@ -10,6 +10,7 @@ Link to web application can be found [here](https://face-mask-image-classificati
 ---
 
 ## Overview
+<img src="assets/imgs/CNN.png" class="img-responsive" alt="">
 This project leverages machine learning to develop an image classification system capable of detecting whether individuals are wearing masks. Using a Convolutional Neural Network (CNN) built with TensorFlow, the project achieved high performance and user accessibility through a custom-designed graphical interface.
 
 ## Key Features
