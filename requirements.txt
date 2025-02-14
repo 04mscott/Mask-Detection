@@ -1,10 +1,4 @@
+Flask
 numpy
 scikit_learn
-taipy
-taipy_common
-taipy_core
-taipy_gui
-taipy_rest
-taipy_templates
 tensorflow
-gunicorn
