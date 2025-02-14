@@ -7,3 +7,4 @@ taipy_gui
 taipy_rest
 taipy_templates
 tensorflow
+gunicorn
