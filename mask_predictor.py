@@ -11,7 +11,7 @@ def predict_with_model(model, img_path):
     classes = ['Mask Worn Incorrectly', 'Mask Worn Correctly', 'No Mask']
 
     probs = model.predict(img) # Returns list of probabilities of img belonging to each class
-    top_prob = round(probs.max(), 2)
+    top_prob = probs.max()
     pred = classes[np.argmax(probs)] # Index of max value
 
     return top_prob, pred

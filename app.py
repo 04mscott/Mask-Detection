@@ -1,42 +1,64 @@
-from flask import Flask
-from flask import jsonify
 import os
-import base64
-from flask import request
-from mask_predictor import predict_with_model
+import shutil
+from taipy.gui import Gui
 from tensorflow.keras import models
+from mask_predictor import predict_with_model
 
-app = Flask(__name__)
+# Set base directory for accessing files in venv/deployed application
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
-def get_model():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    global model
-    model_path = os.path.join(base_dir, 'Models', 'mask_classifier.keras')
-    model = models.load_model(model_path)
-    print("Model Successfully Loaded")
-
+# Load Model
 print('Loading Keras Model...')
-get_model()
+model_path = os.path.join(base_dir, 'Models', 'mask_classifier.keras')
+model = models.load_model(model_path)
+print("Model Successfully Loaded")
 
-@app.route("/", methods = ['POST'])
-def predict():
-    message = request.get_json(force=True)
-    encoded = message['image']
-    decoded = base64.b64decode(encoded)
-    # Save file temporarily to pass to predict fxn
-    temp_img_path = 'temp_img.png'
-    with open(temp_img_path, 'wb') as img_file:
-        img_file.write(decoded)
+# Placeholder image file path
+temp_img = ''
+img_path = os.path.join(base_dir, 'assets', 'imgs', 'placeholder_image.png')
+prediction = ""
+prob = 0
+pred = ""
 
-    top_prob, pred = predict_with_model(model, temp_img_path)
-    # Remove file when finished
-    os.remove(temp_img_path)
+index = """
+<|text-center|
+# Face Mask Image Classifier
 
-    response = {
-        'prediction' : str(pred) + ', Confidence: ' + str(top_prob * 100) + '%'
-    }
+<|{img_path}|image|width=25vw|>
 
-    return jsonify(response)
+<|{temp_img}|file_selector|extensions=.png|>
+Upload an Image
+
+<|{pred}|>
+
+<|{prob}|indicator|value={prob}|min=0|max=100|width=25vw|>
+>
+"""
+
+def on_change(state, var_name, var_val):
+    if var_name == 'temp_img':
+        # Remove old image from temp directory
+        if 'placeholder_image.png' not in state.img_path:
+            os.remove(state.img_path)
+
+        # Create a temp directory to save image
+        temp_dir = os.path.join(base_dir, 'temp')
+        os.makedirs(temp_dir, exist_ok=True)
+
+        # Save the image
+        temp_img = os.path.join(temp_dir, os.path.basename(var_val))
+        shutil.copy(var_val, temp_img)
+
+        # Update state to display image
+        state.img_path = temp_img
+
+        # Run prediction model
+        top_prob, prediction = predict_with_model(model, temp_img)
+
+        state.prob = round(top_prob * 100, 2)
+        state.pred = "Prediction: " + prediction
+
+app = Gui(page=index)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(use_reloader=True)
