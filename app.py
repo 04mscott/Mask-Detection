@@ -31,6 +31,8 @@ Upload an Image
 
 <|{pred}|>
 
+
+
 <|{prob}|indicator|value={prob}|min=0|max=100|width=25vw|>
 >
 """
