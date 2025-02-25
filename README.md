@@ -1,11 +1,11 @@
 [Return to Home](https://04mscott.github.io/)
 
-<center><h1>Image Classification Neural Network (Deployed)</h1></center>
+<center><h1>Image Classification Neural Network</h1></center>
 <center><h2>Mask Detection Using TensorFlow</h2></center>
 
 <img src="assets/imgs/incorrect_mask.png" class="img-responsive" alt="">
 
-Link to web application can be found [here](https://face-mask-image-classification.onrender.com/)
+Deployment ended to make way for (Air Quality App's)[] deployment
 
 ---
 
