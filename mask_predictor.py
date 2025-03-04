@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 def predict_with_model(model, img_path):
     img = tf.io.read_file(img_path)
     img = tf.image.decode_png(img, channels=3)
