@@ -1,5 +1,3 @@
-[Return to Home](https://04mscott.github.io/)
-
 <center><h1>Image Classification Neural Network</h1></center>
 <center><h2>Mask Detection Using TensorFlow</h2></center>
 
@@ -36,6 +34,3 @@ This project leverages machine learning to develop an image classification syste
 + Upload an Image: Users upload an image of a person through the TaiPy-powered GUI.
 + Prediction in Real-Time: The model processes the image and outputs whether the person is wearing a mask or not, along with confidence scores.
 + Seamless Experience: Designed for non-technical users with an intuitive interface that simplifies model predictions.
-
----
-[Return to Home](https://04mscott.github.io/)
