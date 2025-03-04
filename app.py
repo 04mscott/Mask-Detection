@@ -4,6 +4,7 @@ from taipy.gui import Gui
 from tensorflow.keras import models
 from mask_predictor import predict_with_model
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 # Set base directory for accessing files in venv/deployed application
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
