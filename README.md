@@ -3,7 +3,7 @@
 
 <img src="assets/imgs/incorrect_mask.png" class="img-responsive" alt="">
 
-Deployment ended to make way for (Air Quality App's)[] deployment
+Deployment ended to make way for [Air Quality App's](https://air-quality-app-wr4z.onrender.com/) deployment
 
 ---
 
